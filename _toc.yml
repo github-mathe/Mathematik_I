@@ -10,5 +10,3 @@ chapters:
     sections:
       - file: markdown  # Subsection: Markdown Basics
       - file: markdown-notebooks  # Subsection: Markdown with Notebooks
-  - file: notebooks  # Chapter 2: Notebooks
-  - file: references  # Chapter 3: References
