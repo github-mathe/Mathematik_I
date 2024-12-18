@@ -2,8 +2,7 @@
 format: jb-book
 
 # Root of the book (homepage)
-root: intro
-
+root: einfuehrung
 # Chapters and sections
 chapters:
   - file: kapitel_1  # Chapter 1
