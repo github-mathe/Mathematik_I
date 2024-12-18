@@ -1,0 +1,395 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Einführung &#8212; Vorlesungsskript Mathematik I</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Kapitel 1" href="kapitel_1.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Vorlesungsskript Mathematik I</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 current">
+  <a class="reference internal" href="#">
+   Einführung
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="kapitel_1.html">
+   Kapitel 1
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="markdown.html">
+     Markdown Files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="markdown-notebooks.html">
+     Notebooks with MyST Markdown
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/einfuehrung.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Einführung</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="einfuhrung">
+<h1>Einführung<a class="headerlink" href="#einfuhrung" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    - **Problemlösungsfähigkeiten:** 
+    Mathematik fördert bei den Studierenden
+    Probleme systematisch anzugehen und komplexe Fragen in überschaubare Teile zu zerlegen.
+    
+    - **Analytisches und kritisches Denken:** 
+    Der Umgang mit mathematischen Konzepten fördert kritisches Denken und die Fähigkeit, Situationen zu analysieren und informierte Entscheidungen zu treffen.
+    
+    - **Abstraktes Denken:** 
+    Mathematik ermutigt zu abstraktem Denken, was in Ingenieur- und Wissenschaftsbereichen von entscheidender Bedeutung ist.
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- **Beharrlichkeit und Resilienz:** 
+    Mathematische Herausforderungen lehren Ausdauer und die Fähigkeit, Rückschläge als Lernchancen zu betrachten.
+    
+    - **Anwendung auf reale Probleme:** 
+    Mathematik ist nicht nur theoretisch, sondern hat praktische Anwendungen in Technik, Wirtschaft und Alltag.
+    
+    - **Interdisziplinäre Verbindungen:** 
+    Viele Fachgebiete basieren auf mathematischen Prinzipien, was die Innovations- und Kreativitätsfähigkeit der Studierenden erhöht.
+
+
+
+
+
+
+
+    - Mathematik formt einen Denkansatz (**Mindset**), der **logisches Denken**, **Resilienz** und **interdisziplinäres Arbeiten** schätzt.
+    - Diese Fähigkeiten bereiten die Studierenden auf akademische und reale und praxisbezogene Herausforderungen vor.
+    - In den **Mathematikvorlesungen** wird insbesondere das **abstrakte** und **kritische Denken** geübt. 
+</pre></div>
+</div>
+<p>{Abstraktes und kritisches Denken}</p>
+<p>Abstraktes und kritisches Denken sind essentielle Fähigkeiten für Ingenieure, um komplexe Probleme zu lösen und innovative Lösungen zu entwickeln.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- **Abstraktes Denken:** Befähigt Ingenieure, Konzepte zu generalisieren und Muster zu erkennen.
+- **Kritisches Denken:** Erlaubt die Bewertung von Informationen, Argumenten und Lösungen.
+</pre></div>
+</div>
+<p>Zusammen bilden diese Denkweisen die Grundlage für effektive Problemlösung und technologische Innovationen.</p>
+<p>{Die Verbindung zwischen abstraktem und kritischem Denken}</p>
+<p>Die beiden Denkweisen sind eng miteinander verbunden:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- **Abstraktes Denken als Grundlage:** Hilft beim Identifizieren von Mustern und Prinzipien, die für das Verständnis komplexer Systeme entscheidend sind.
+- **Kritisches Denken zur Evaluation:** Erfordert eine tiefere Analyse der gefundenen Muster und Konzepte, um deren Anwendbarkeit und Effizienz zu beurteilen.
+%- **Synergie:** Gemeinsam fördern sie die Fähigkeit, fundierte Entscheidungen zu treffen und innovative Lösungen zu entwickeln.
+</pre></div>
+</div>
+<p>{Die Rolle der Mathematik in der Förderung kritischen und abstrakten Denkens}</p>
+<p>Mathematik ist ein zentrales Werkzeug, das beide Denkweisen unterstützt:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- **Modellierung und Analyse:** Mathematische Modelle helfen, Phänomene zu abstrahieren und kritisch zu bewerten.
+- **Quantifizierung von Lösungen:** Mathematik ermöglicht die präzise Beschreibung und Überprüfung von Lösungen.
+- **Logik und Argumentation:** Mathematische Prinzipien fördern das kritische Denken und die Fähigkeit, fundierte Argumente zu formulieren.
+</pre></div>
+</div>
+<p>{Mathematische Disziplinen in der Ingenieurwissenschaft}</p>
+<p>Die folgenden mathematischen Disziplinen sind entscheidend für Ingenieure, da sie grundlegende Werkzeuge zur Analyse und Problemlösung bieten:\[2ex]</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- **Lineare Algebra:**
+
+
+    - **Lineare Gleichungen:** Lösung von linearen Gleichungen zur Modellierung von Systemverhalten.
+    - **Mathematische Modellierung:** Verwendung algebraischer Strukturen zur Beschreibung und Analyse von Ingenieurproblemen.
+    - **Optimierung:** Einsatz von Algebra zur Maximierung oder Minimierung von Funktionen in Design- und Produktionsprozessen.
+</pre></div>
+</div>
+<p>{Mathematische Disziplinen in der Ingenieurwissenschaft}</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- **Analytische Geometrie:**\\[2ex]
+
+    
+    - **Geometrische Konzepte:** Untersuchung von Punkten, Linien, Ebenen und deren Beziehungen im Raum, um technische Zeichnungen und Modelle zu erstellen.
+    - **Vektoren:** Anwendung von Vektoren zur Beschreibung von Kräften, Bewegungen und anderen physikalischen Phänomenen.
+    %- **Kollisions- und Schnittberechnungen:** Analyse der Geometrie von Objekten zur Vorhersage von Wechselwirkungen in mechanischen Systemen.
+    - **Kurven- und Flächenanalysen:** Bestimmung von Eigenschaften und Schnittpunkten geometrischer Formen in der Konstruktion.
+</pre></div>
+</div>
+<p>{Mathematische Disziplinen in der Ingenieurwissenschaft}</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- **Analysis:**\\[2ex]
+
+
+    - **Differential- und Integralrechnung:** Untersuchung von Funktionen zur Analyse von Änderungsraten und Flächen unter Kurven.
+    - **Grenzwertbetrachtungen:** Anwendung von Grenzwerten zur Untersuchung des Verhaltens von Funktionen an kritischen Punkten.
+    - **Differentialgleichungen:** Modellierung dynamischer Systeme in Physik und Technik, um Prozesse wie Wärmeübertragung oder Schwingungen zu beschreiben.
+</pre></div>
+</div>
+<p>{Praktische Beispiele}</p>
+<p>Wir betrachten einige praktische Beispiele, die die Anwendung von abstraktem und kritischem Denken in verschiedenen Ingenieurdisziplinen veranschaulichen.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- **Fokus auf reale Herausforderungen:** Die Beispiele zeigen, wie Ingenieure abstrakte Modelle und kritisches Denken nutzen, um spezifische Probleme zu lösen.
+%- **Verbindung zur Theorie:** Wir werden auch auf die theoretischen Konzepte eingehen, die diesen praktischen Anwendungen zugrunde liegen.
+</pre></div>
+</div>
+<p>{Elektrotechnik: Integration erneuerbarer Energien}</p>
+<p><strong>Problemstellung:</strong> Die Integration erneuerbarer Energiequellen in bestehende Stromnetze ist entscheidend, um die Nachhaltigkeit zu erhöhen und die Abhängigkeit von fossilen Brennstoffen zu verringern.</p>
+<p>{Elektrotechnik: Integration erneuerbarer Energien}</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- **Analyse der Variabilität:** Ingenieure analysieren die variablen Eigenschaften erneuerbarer Energiequellen (z.B. Schwankungen von Wind- und Sonnenenergie) und bewerten deren Auswirkungen auf das Stromnetz. Sie entwickeln Konzepte zur Vorhersage und Integration dieser Schwankungen.
+
+- **Vorhersagemodelle:** Ingenieure erstellen präzise Vorhersagemodelle unter Berücksichtigung von Wetterdaten, historischen Mustern und maschinellen Lernverfahren, um die Energieproduktion vorhersagbar und verlässlich zu gestalten. Diese Modelle werden kontinuierlich angepasst, um die Genauigkeit zu maximieren.
+
+- **Energiespeicherung:** Praktische Ingenieurlösungen wie Batterien, Pumpspeicherkraftwerke oder neue Technologien wie Wasserstoffspeicherung werden entworfen und optimiert, um überschüssige Energie zu speichern und das Netz auszugleichen.
+</pre></div>
+</div>
+<p>{Elektrotechnik: Integration erneuerbarer Energien}</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- **Netzstabilität:** Ingenieure entwerfen Regelstrategien, um die Netzfrequenz und Spannung stabil zu halten, auch wenn die Einspeisung aus erneuerbaren Energien stark schwankt. Sie entwickeln z.B. Lastmanagementsysteme oder intelligente Netze, um Stabilität zu gewährleisten.
+
+- **Kritische Bewertung:** Ingenieure hinterfragen kontinuierlich die Effizienz, Machbarkeit und Zuverlässigkeit ihrer Konzepte. Sie analysieren Daten, prüfen Alternativen und passen Modelle und Systeme an, um die beste Lösung für nachhaltige Energieintegration zu erreichen.
+</pre></div>
+</div>
+<p><em>Ingenieure setzen nicht nur theoretisches Wissen um, sondern denken praktisch und systematisch, indem sie Daten analysieren, Lösungen testen und diese stetig verbessern.</em></p>
+<p>{Maschinenbau: Effizientes Kühlsystem}</p>
+<p><strong>Problemstellung:</strong> Die Entwicklung eines effizienten Kühlsystems für Hochleistungsmotoren ist entscheidend, um Überhitzung zu vermeiden und die Lebensdauer der Motoren zu verlängern.</p>
+<p>{Maschinenbau: Effizientes Kühlsystem}</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- **Wärmeübertragungsprinzipien:** Ingenieure analysieren die Wärmeübertragung (Leitung, Konvektion, Strahlung), um den effizientesten Weg zur Abfuhr überschüssiger Wärme zu bestimmen. Dies umfasst die Optimierung der Kontaktflächen und die Anpassung der Wärmeaustauschkomponenten.
+
+- **Materialwissenschaft:** Ingenieure untersuchen fortschrittliche Materialien mit hoher Wärmeleitfähigkeit, wie z.B. Kupfer oder spezielle Legierungen, um die Wärmeableitung zu verbessern. Dabei werden Kosten, Haltbarkeit und die Integration in das Kühlsystem bewertet.
+
+- **Fluiddynamik:** Mit Hilfe der Fluiddynamik optimieren Ingenieure den Fluss des Kühlmittels, um sicherzustellen, dass die Wärme schnell und gleichmäßig abtransportiert wird. Sie modellieren Strömungswege, Druckverluste und Turbulenzen, um die maximale Effizienz zu erreichen.
+</pre></div>
+</div>
+<p>{Maschinenbau: Effizientes Kühlsystem}</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- **Simulationen:** Ingenieure nutzen fortschrittliche Computersimulationen, um verschiedene Kühlsystemkonfigurationen zu modellieren und deren Effektivität unter realen Bedingungen zu testen. Sie simulieren unterschiedliche Szenarien wie variable Lasten und extreme Temperaturen.
+
+- **Kritische Analyse:** Die Ergebnisse der Simulationen werden kritisch geprüft. Ingenieure hinterfragen, welche Modelle am besten zur jeweiligen Anwendung passen, und passen das Design iterativ an, um eine optimale Lösung zu gewährleisten. Sie evaluieren mögliche Kompromisse zwischen Effizienz, Kosten und Komplexität des Systems.
+</pre></div>
+</div>
+<p><em>Ingenieure setzen ihr theoretisches Wissen in die Praxis um, indem sie Modelle testen, analysieren und die besten Ansätze für die Lösung von realen Problemen auswählen.</em></p>
+<p>{Innovation und Kreativität}</p>
+<ul class="simple">
+<li><p><strong>Abstraktes Denken</strong> ist unerlässlich für Innovationen. Es befähigt Ingenieure, neue Technologien, Prozesse und Materialien zu erfinden, die über das Bekannte hinausgehen.</p></li>
+<li><p><strong>Kritisches Denken als Katalysator:</strong> Diese kreative Denkweise wird durch kritisches Denken ergänzt, das es ermöglicht, innovative Ideen zu evaluieren und zu verfeinern.</p></li>
+</ul>
+<p>Diese Kombination ist entscheidend für den Fortschritt in der Technik.\[2ex]</p>
+<p>Die Rolle des abstrakten und kritischen Denkens in der Technik ist vielseitig und entscheidend für die Entwicklung effektiver Lösungen in verschiedenen Disziplinen. Ingenieure, die diese Fähigkeiten meistern, sind in der Lage, komplexe Herausforderungen anzugehen und innovative Ansätze zu finden, um die Zukunft der Technik zu gestalten.</p>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='right-next' id="next-link" href="kapitel_1.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Kapitel 1</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Thomas Carraro<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
