@@ -1,10 +1,14 @@
 # Table of contents
-# Learn more at https://jupyterbook.org/customize/toc.html
-
 format: jb-book
+
+# Root of the book (homepage)
 root: intro
+
+# Chapters and sections
 chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
-- file: kapitel_1
+  - file: kapitel_1  # Chapter 1
+    sections:
+      - file: markdown  # Subsection: Markdown Basics
+      - file: markdown-notebooks  # Subsection: Markdown with Notebooks
+  - file: notebooks  # Chapter 2: Notebooks
+  - file: references  # Chapter 3: References
