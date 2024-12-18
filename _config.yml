@@ -22,14 +22,16 @@ bibtex_bibfiles:
 # Information about where the book exists on the web
 repository:
   url: https://github.com/github-mathe/Mathematik_I  # Online location of your book
-  path_to_book: ""  # Optional path to your book, relative to the repository root
+  path_to_book: docs  # Optional path to your book, relative to the repository root
   branch: main  # Which branch of the repository should be used when creating links (optional)
 
 html:
+  baseurl: /Mathematik_I  # Set this to the repository name
   theme:
     name: sphinx_book_theme
     options:
       navigation_depth: 2  # Sidebar navigation levels
       show_navbar_depth: 2  # Levels of headers shown in sidebar
       collapse_navigation: False  # Keep the navigation expanded
+
 
