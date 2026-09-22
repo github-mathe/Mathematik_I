@@ -1,0 +1,36 @@
+/* ==================================================
+   Hauptüberschrift Übungen
+   ================================================== */
+
+a.myst-toc-item[title="Übungen"] {
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 1.15rem !important;
+    font-weight: 900 !important;
+    margin-top: 1.5rem !important;
+}
+
+
+/* Originalen "Source"-Text ausblenden */
+details:has(pre) > summary {
+    font-size: 0 !important;
+}
+
+/* Auch eventuell verschachtelten Source-Text ausblenden */
+details:has(pre) > summary * {
+    font-size: 0 !important;
+}
+
+/* Geschlossene Codezelle */
+details:has(pre):not([open]) > summary::after {
+    content: "Show code cell source";
+    font-size: 0.875rem !important;
+}
+
+/* Geöffnete Codezelle */
+details:has(pre)[open] > summary::after {
+    content: "Hide code cell source";
+    font-size: 0.875rem !important;
+
+
+
+}

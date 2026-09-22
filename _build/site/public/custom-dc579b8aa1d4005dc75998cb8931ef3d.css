@@ -1,0 +1,16 @@
+/* Text "Source" bei eingeklappten Codezellen ersetzen */
+details:has(pre) > summary {
+    font-size: 0;
+}
+
+/* geschlossen */
+details:has(pre):not([open]) > summary::after {
+    content: "Show code cell source";
+    font-size: 0.875rem;
+}
+
+/* geöffnet */
+details:has(pre)[open] > summary::after {
+    content: "Hide code cell source";
+    font-size: 0.875rem;
+}

@@ -1,0 +1,27 @@
+/* Originalen "Source"-Text ausblenden */
+details:has(pre) > summary {
+    font-size: 0 !important;
+}
+
+/* Auch eventuell verschachtelten Source-Text ausblenden */
+details:has(pre) > summary * {
+    font-size: 0 !important;
+}
+
+/* Geschlossene Codezelle */
+details:has(pre):not([open]) > summary::after {
+    content: "Show code cell source";
+    font-size: 0.875rem !important;
+}
+
+/* Geöffnete Codezelle */
+details:has(pre)[open] > summary::after {
+    content: "Hide code cell source";
+    font-size: 0.875rem !important;
+
+ /* -------------------------------------------------
+   Neuer Hauptbereich: Übungen
+   ------------------------------------------------- */
+
+
+}

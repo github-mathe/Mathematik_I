@@ -1,0 +1,34 @@
+/* Originalen "Source"-Text ausblenden */
+details:has(pre) > summary {
+    font-size: 0 !important;
+}
+
+/* Auch eventuell verschachtelten Source-Text ausblenden */
+details:has(pre) > summary * {
+    font-size: 0 !important;
+}
+
+/* Geschlossene Codezelle */
+details:has(pre):not([open]) > summary::after {
+    content: "Show code cell source";
+    font-size: 0.875rem !important;
+}
+
+/* Geöffnete Codezelle */
+details:has(pre)[open] > summary::after {
+    content: "Hide code cell source";
+    font-size: 0.875rem !important;
+
+ /* -------------------------------------------------
+   Neuer Hauptbereich: Übungen
+   ------------------------------------------------- */
+
+a[href$="/uebungen" i],
+a[href$="/uebungen/" i],
+a[href$="uebungen.html" i] {
+    font-weight: 800 !important;
+    font-size: 1.15rem !important;
+    margin-top: 1.2rem !important;
+    padding-top: 0.8rem !important;
+    border-top: 2px solid currentColor !important;   
+}

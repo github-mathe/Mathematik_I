@@ -1,0 +1,25 @@
+\begin{picture}(0,0)%
+\includegraphics{two_masses.pdf}%
+\end{picture}%
+\setlength{\unitlength}{4144sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined%
+\gdef\SetFigFont#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(12492,4044)(1696,-5023)
+\put(1711,-1951){\makebox(0,0)[lb]{\smash{{\SetFigFont{50}{60.0}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$m_1$}%
+}}}}
+\put(11206,-1951){\makebox(0,0)[lb]{\smash{{\SetFigFont{50}{60.0}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$m_2$}%
+}}}}
+\put(12376,-4741){\makebox(0,0)[lb]{\smash{{\SetFigFont{50}{60.0}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$x_2$}%
+}}}}
+\put(3151,-4741){\makebox(0,0)[lb]{\smash{{\SetFigFont{50}{60.0}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$x_1$}%
+}}}}
+\put(12961,-2581){\makebox(0,0)[lb]{\smash{{\SetFigFont{50}{60.0}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$x$}%
+}}}}
+\put(6616,-1546){\makebox(0,0)[lb]{\smash{{\SetFigFont{50}{60.0}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$c$}%
+}}}}
+\end{picture}%

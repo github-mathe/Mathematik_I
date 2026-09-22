@@ -1,0 +1,212 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+
+project:
+  id: 91afce94-bfdd-4622-a718-67b086c2e895
+  title: Vorlesung Mathematik I 
+
+  jupyter:
+    lite: true
+
+  toc:
+
+    - file: Willkommen.ipynb
+      title: Willkommen
+
+    - file: Grundlagen.ipynb
+      title: Grundlagen
+      children:
+
+        - file: Symbole.ipynb
+          title: Wichtige Symbole
+
+        - file: Gruppen.ipynb
+          title: Gruppe
+
+        - file: Ringe.ipynb
+          title: Ringe
+
+        - file: Koerper.ipynb
+          title: Körper  
+
+        - file: TrigonometrischeFunktionen.ipynb
+          title: Trigonometrische Funktionen  
+
+    
+    - file: KomplexeZahlen.ipynb
+      title: Komplexe Zahlen
+      children:
+
+        - file: GaussEbene.ipynb
+          title: Gauss-Ebene
+
+        - file: KomplexKonjugiert.ipynb
+          title: Konjugiert komplexe Zahl  
+
+        - file: RechnenKomplexeZahl.ipynb
+          title: Addition, Subtraktion, Multiplikation und Division
+
+        - file: Polarform.ipynb
+          title: Polarform und Eulersche Form
+
+        - file: UmwandlungKartesischPolarform.ipynb
+          title: Umwandlung von kartesischer zur Polarform
+
+        - file: UmwandlungPolarKartesisch.ipynb
+          title: Umwandlung von polarer zu kartesischer Form      
+
+        - file: LGSkomplex.ipynb
+          title: Lineare Gleichungssysteme mit komplexen Zahlen
+
+        - file: HornerSchema.ipynb
+          title: Horner Schema für die Polynomdivision
+
+        - file: KomplexeGleichungen.ipynb
+          title: Komplexe Gleichungen    
+
+        - file: Einheitswurzeln.ipynb
+          title: Einheitswurzeln  
+
+        - file: KomplexeGleichungSubstitution.ipynb
+          title: Komplexe Gleichung mit Substitution        
+
+    - title: Gauß-Eliminationsverfahren
+      children:
+
+        - file: 02_LineareGleichungssysteme.ipynb
+          title: Lineares Gleichungssystem
+
+        - file: 03_GaussEliminations.ipynb
+          title: Gauß-Elimination
+
+        - file: balken_beispiel.ipynb
+          title: Balkenbeispiel
+
+        - file: KartesischesProdukt.ipynb
+          title: Kartesisches Produkt 
+
+        - file: Vektorraum.ipynb
+          title: Vektorräume
+
+        - file: Linearkombination.ipynb
+          title: Linearkombination
+
+        - file: Unterraeume.ipynb
+          title: Unterräume
+
+        - file: LineareAbhaengigkeit.ipynb
+          title: Lineare Abhängigkeit von Vektoren
+
+        - file: Rang.ipynb
+          title: Rang einer Matrix
+
+        - file: Spann.ipynb
+          title: Spann eines Vektorraumes
+
+        - file: Basis.ipynb
+          title: Basis eines Vektorraumes             
+
+    # ------------------------------------------------
+    # Kapitel 4
+    # ------------------------------------------------
+
+    - file: 01_Matrizen_Vektoren.ipynb
+      title: Vektoren und Matrizen
+      children:
+
+        - file: Matrixoperationen.ipynb
+          title: Matrixoperationen
+
+        - file: AnwendungMatrixoperationen.ipynb
+          title: Anwendungen in der Bildverarbeitung
+
+        - file: VektorMatrix_Norm.ipynb
+          title: Vektor- und Matrixnormen
+
+    # ------------------------------------------------
+    # Kapitel 5
+    # ------------------------------------------------
+
+    - file: Skalarprodukt.ipynb
+      title: Skalarprodukte
+
+    # ------------------------------------------------
+    # Kapitel 6
+    # ------------------------------------------------
+
+    - file: Determinanten.ipynb
+      title: Determinante
+
+    # ------------------------------------------------
+    # Kapitel 7
+    # ------------------------------------------------
+
+    - file: Spezielle_Matrizen.ipynb
+      title: Spezielle Matrizen
+
+    # ------------------------------------------------
+    # Kapitel 8
+    # ------------------------------------------------
+
+    - file: Inverse.ipynb
+      title: Berechnung der Inverse einer Matrix
+
+    # ------------------------------------------------
+    # Kapitel 9
+    # ------------------------------------------------
+
+    - title: Lineare Abbildungen
+      children:
+
+        - file: LineareAbbildungen.ipynb
+          title: Lineare Abbildungen
+
+        - file: KernundBild.ipynb
+          title: Kern und Bild einer linearen Abbildung
+
+        - file: Kreuz_und_Tensorprodukt.ipynb
+          title: Kreuzprodukt und Tensorprodukt
+
+        - file: Projektionen.ipynb
+          title: Projektionen
+
+        - file: LineareRegression.ipynb
+          title: Lineare Regression
+
+    - title: Orthogonalisierung und orthogonales Komplement
+      children:
+
+        - file: GramSchmidt.ipynb
+          title: Gram-Schmidt-Algorithmus
+
+        - file: OrthogonalesKomplement.ipynb  
+          title: Orthogonales Komplement eines Vektorraumes
+
+        - file: DirekteSumme.ipynb
+          title: Direkte Summe von Unterräumen
+
+        - file: Dimensionstheorem.ipynb  
+          title: Dimensionstheorem für Unterräume
+
+        - file: DimensionstheoremLGS.ipynb
+          title: Dimensionstheorem für lineare Gleichungssysteme
+
+    - file: Eigenwerte.ipynb
+      title: Eigenwerte und Eigenvektoren
+
+
+    - file: Uebungen/Uebungen.ipynb
+      title: Übungen
+      children:
+
+        - file: Uebungen/Uebung_LGS_01.ipynb
+          title: Lösen eine lin. Gleichugssystems mit dem Gauß-Eliminationsverfahren
+
+
+
+site:
+  template: book-theme
+  options:
+    hide_title_block: true
+    style: ./custom.css
+    outline_maxdepth: 2

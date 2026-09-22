@@ -1,0 +1,92 @@
+name: MyST GitHub Pages Deploy
+
+on:
+  push:
+    branches: [main]
+
+  workflow_dispatch:
+
+env:
+  BASE_URL: /${{ github.event.repository.name }}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repository laden
+        uses: actions/checkout@v4
+
+      - name: GitHub Pages vorbereiten
+        uses: actions/configure-pages@v3
+
+      # ------------------------------------------------
+      # MyST / Jupyter Book
+      # ------------------------------------------------
+
+      - name: Node.js installieren
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24.x
+
+      - name: MyST installieren
+        run: npm install -g mystmd
+
+      - name: Jupyter Book erstellen
+        run: myst build --html
+
+      # ------------------------------------------------
+      # JupyterLite
+      # ------------------------------------------------
+
+      - name: Python installieren
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: JupyterLite installieren
+        run: |
+          python -m pip install --upgrade pip
+          pip install jupyterlite-core jupyterlite-pyodide-kernel jupyter-server
+
+      - name: Notebook-Dateien für JupyterLite vorbereiten
+        run: |
+          mkdir -p lite-content
+
+          find . -maxdepth 1 -name "*.ipynb" -exec cp {} lite-content/ \;
+
+          if [ -d "Figures" ]; then
+            cp -r Figures lite-content/
+          fi
+
+      - name: JupyterLite erstellen
+        run: |
+          jupyter lite build \
+            --contents lite-content \
+            --output-dir _build/html/lite
+
+      # ------------------------------------------------
+      # Alles veröffentlichen
+      # ------------------------------------------------
+
+      - name: Website hochladen
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./_build/html
+
+      - name: Website veröffentlichen
+        id: deployment
+        uses: actions/deploy-pages@v4
