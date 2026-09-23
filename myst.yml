@@ -198,10 +198,24 @@ project:
     - file: Uebungen/Uebungen.ipynb
       title: Übungen
       children:
+        
+        - title: Lösen eines LGS
+          children:
 
-        - file: Uebungen/Uebung_LGS_01.ipynb
-          title: Lösen eine lin. Gleichugssystems mit dem Gauß-Eliminationsverfahren
+          - file: Uebungen/Uebung_LGS_01.ipynb
+            title: LGS mit eindeutiger Lösung
 
+          - file: Uebungen/Uebung_LGS_02.ipynb
+            title: LGS mit unendlich vielen Lösungen
+
+          - file: Uebungen/Uebung_LGS_03.ipynb
+            title: LGS mit keiner Lösung
+
+        - title: Lineare Abhängigkeit 
+          children:
+
+          - file: Uebung_LineareAbhaengigkeit_1.ipynb
+            title: Lineare Abhängigkeit von Vektoren
 
 
 site:
