@@ -214,8 +214,36 @@ project:
         - title: Lineare Abhängigkeit 
           children:
 
-          - file: Uebung_LineareAbhaengigkeit_1.ipynb
+          - file: Uebungen/Uebung_LineareAbhaengigkeit_1.ipynb
+            title: Lineare Abhängigkeit von Vektoren mit Definition
+
+          - file: Uebungen/Uebung_LineareAbhaengigkeit_2.ipynb
             title: Lineare Abhängigkeit von Vektoren
+
+
+        - title: Linearkombination 
+          children:
+
+          - file: Uebungen/Uebung_Linearkombination_01.ipynb
+            title: Linearkombination von Vektoren
+
+          - file: Uebungen/Uebung_Linearkombination_02.ipynb
+            title: Linearkombination von Polynomen
+
+        - title: Spann und Basis eines Vektorraumes
+          children:
+
+          - file: Uebungen/Uebung_Spann_01.ipynb
+            title: Spann eines Vektorraumes    
+
+          - file: Uebungen/Uebung_Basis_01.ipynb
+            title: Basis eines Vektorraumes 
+
+        - title: Vektor-/Matrixmultiplikation 
+          children:
+
+          - file: Uebungen/Uebung_VektorVektorMult_01.ipynb
+            title: Vektor-Vektor-Multiplikation   
 
 
 site:
