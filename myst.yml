@@ -245,6 +245,15 @@ project:
           - file: Uebungen/Uebung_VektorVektorMult_01.ipynb
             title: Vektor-Vektor-Multiplikation   
 
+          - file: Uebungen/Uebung_MatrixMatrixMult_01.ipynb
+            title: Matrix-Matrix-Multiplikation  
+
+        - title: Normen
+          children:
+
+          - file: Uebungen/Uebung_Norm_01.ipynb
+            title: Bedingungen einer Norm   
+
 
 site:
   template: book-theme
