@@ -254,6 +254,19 @@ project:
           - file: Uebungen/Uebung_Norm_01.ipynb
             title: Bedingungen einer Norm   
 
+          - file: Uebungen/Uebung_Norm_02.ipynb
+            title: Vektornormen 
+
+          - file: Uebungen/Uebung_Norm_03.ipynb
+            title: Matrixnormen 
+
+          - file: Uebungen/Uebung_Norm_04.ipynb
+            title: Vektornormen komplex 
+
+          - file: Uebungen/Uebung_Norm_05.ipynb
+            title: Matrixnormen komplex 
+
+
 
 site:
   template: book-theme
