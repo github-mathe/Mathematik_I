@@ -266,7 +266,14 @@ project:
           - file: Uebungen/Uebung_Norm_05.ipynb
             title: Matrixnormen komplex 
 
+        - title: Skalarprodukt
+          children:
 
+          - file: Uebungen/Uebung_Skalarprodukt_01.ipynb
+            title: Reelles Skalarprodukt
+
+          - file: Uebungen/Uebung_Skalarprodukt_02.ipynb
+            title: Komplexes Skalarprodukt  
 
 site:
   template: book-theme
