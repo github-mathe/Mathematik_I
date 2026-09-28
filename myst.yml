@@ -275,6 +275,22 @@ project:
           - file: Uebungen/Uebung_Skalarprodukt_02.ipynb
             title: Komplexes Skalarprodukt  
 
+        - title: Determinanten
+          children:
+
+          - file: Uebungen/Uebung_Determinanten_00.ipynb
+            title: Determinante einer 2x2-Matrix 
+ 
+          - file: Uebungen/Uebung_Determinanten_01.ipynb
+            title: Determinante einer 3x3-Matrix    
+
+          - file: Uebungen/Uebung_Determinanten_02.ipynb
+            title: Determinante einer 4x4-Matrix 
+
+          - file: Uebungen/Uebung_Determinanten_03.ipynb
+            title: Determinante einer Dreiecksmatrix
+
+
 site:
   template: book-theme
   options:
