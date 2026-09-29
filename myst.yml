@@ -290,6 +290,15 @@ project:
           - file: Uebungen/Uebung_Determinanten_03.ipynb
             title: Determinante einer Dreiecksmatrix
 
+        - title: Matrixeigenschaften
+          children:
+
+          - file: Uebungen/Uebung_Matrixeigenschaften_01.ipynb
+            title: Konjugierte und adjungierte Matrix    
+
+          - file: Uebungen/Uebung_Matrixeigenschaften_02.ipynb
+            title: Eigenschaften reeler und komplexer Matrizen 
+
 
 site:
   template: book-theme
