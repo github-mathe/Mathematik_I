@@ -297,7 +297,38 @@ project:
             title: Konjugierte und adjungierte Matrix    
 
           - file: Uebungen/Uebung_Matrixeigenschaften_02.ipynb
-            title: Eigenschaften reeler und komplexer Matrizen 
+            title: Eigenschaften reeler und komplexer Matrizen
+
+        - title: Berechnung der Inversen
+          children:
+
+          - file: Uebungen/Uebung_Inverse_01.ipynb
+            title: Berechnung der Inversen mit Gauß-Elimination     
+
+          - file: Uebungen/Uebung_Inverse_02.ipynb
+            title: LU-Zerlegung
+
+        - title: Lineare Abbildungen
+          children:
+
+          - file: Uebungen/Uebung_LineareAbbildungen_01.ipynb
+            title: Definition der linearen Abbildung
+
+          - file: Uebungen/Uebung_LineareAbbildungen_03.ipynb
+            title: Abbildungsmatrizen aufstellen
+
+          - file: Uebungen/Uebung_LineareAbbildungen_02.ipynb
+            title: Bild und Kern einer linearen Abbildung
+
+          - file: Uebungen/Uebung_Kreuz_und_Tensorprodukt_01.ipynb
+            title: Kreuz- und Tensorprodukt  
+
+          - file: Uebungen/Uebung_LineareAbbildungen_04.ipynb
+            title: Projektion auf eine Linie
+
+          - file: Uebungen/Uebung_LineareAbbildungen_05.ipynb
+            title: Projektion auf eine Hyperebene
+
 
 
 site:
