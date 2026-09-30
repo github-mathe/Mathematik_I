@@ -329,6 +329,26 @@ project:
           - file: Uebungen/Uebung_LineareAbbildungen_05.ipynb
             title: Projektion auf eine Hyperebene
 
+          - file: Uebungen/Uebung_LineareAbbildungen_06.ipynb
+            title: Projektion auf einen Unterraum
+
+        - title: Lineare Regression
+          children:
+
+        - title: Orthogonalisierung
+          children:
+
+          - file: Uebungen/Uebung_GramSchmidt_01.ipynb
+            title: Gram-Schmidt-Verfahren  
+
+          - file: Uebungen/Uebung_GramSchmidt_02.ipynb
+            title: Basisbestimmung und Gram-Schmidt-Verfahren
+
+          - file: Uebungen/Uebung_OrthogonalesKomplement_01.ipynb
+            title: Orthogonales Komplement
+
+          - file: Uebungen/Uebung_DirekteSumme_01.ipynb
+            title: Direkte Summe von Unterräumen 
 
 
 site:
