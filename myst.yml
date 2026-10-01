@@ -3,10 +3,12 @@ version: 1
 
 project:
   id: 91afce94-bfdd-4622-a718-67b086c2e895
-  title: Vorlesung Mathematik I 
+  title: Vorlesung Mathematik I
 
   jupyter:
-    lite: true
+    binder:
+      repo: https://github.com/github-mathe/Mathematik_I.git
+      ref: main
 
   toc:
 
