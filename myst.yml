@@ -7,7 +7,7 @@ project:
 
   jupyter:
     binder:
-      repo: https://github.com/github-mathe/Mathematik_I.git
+      repo: github-mathe/Mathematik_I
       ref: main
 
   toc:
