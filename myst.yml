@@ -5,11 +5,15 @@ project:
   id: 91afce94-bfdd-4622-a718-67b086c2e895
   title: Vorlesung Mathematik I
 
+  github: https://github.com/github-mathe/Mathematik_I
+
+  binder: https://mybinder.org/v2/gh/github-mathe/Mathematik_I/main?urlpath=lab/tree/
+
   jupyter:
     lite: true
 
-  toc:
-  
+  toc:    
+
     - file: Willkommen.ipynb
       title: Willkommen
 
