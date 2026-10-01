@@ -6,12 +6,10 @@ project:
   title: Vorlesung Mathematik I
 
   jupyter:
-    binder:
-      repo: github-mathe/Mathematik_I
-      ref: main
+    lite: true
 
   toc:
-
+  
     - file: Willkommen.ipynb
       title: Willkommen
 
@@ -363,6 +361,11 @@ project:
 
 site:
   template: book-theme
+
+  actions:
+    - title: In Binder öffnen
+      url: https://mybinder.org/v2/gh/DEIN-NAME/Mathematik-I/main?urlpath=lab/tree/
+
   options:
     hide_title_block: true
     style: ./custom.css
