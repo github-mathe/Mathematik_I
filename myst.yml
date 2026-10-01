@@ -350,6 +350,14 @@ project:
           - file: Uebungen/Uebung_DirekteSumme_01.ipynb
             title: Direkte Summe von Unterräumen 
 
+        - title: Eigenwertproblem
+          children:
+
+          - file: Uebungen/Uebung_Eigenwertproblem_01.ipynb
+            title: Eigenwerte- und vektoren
+
+
+
 
 site:
   template: book-theme
