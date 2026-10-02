@@ -324,7 +324,7 @@ project:
           - file: Uebungen/Uebung_LineareAbbildungen_02.ipynb
             title: Bild und Kern einer linearen Abbildung
 
-          - file: Uebungen/Uebung_Kreuz_und_Tensorprodukt_01.ipynb
+          - file: Uebungen/Uebung_Kreuzprodukt_Tensorprodukt_01.ipynb
             title: Kreuz- und Tensorprodukt  
 
           - file: Uebungen/Uebung_LineareAbbildungen_04.ipynb
@@ -368,7 +368,7 @@ site:
 
   actions:
     - title: In Binder öffnen
-      url: https://mybinder.org/v2/gh/DEIN-NAME/Mathematik-I/main?urlpath=lab/tree/
+      url: https://mybinder.org/v2/gh/github-mathe/Mathematik_I/main?urlpath=lab/tree/
 
   options:
     hide_title_block: true
