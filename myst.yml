@@ -9,6 +9,11 @@ project:
 
   binder: https://mybinder.org/v2/gh/github-mathe/Mathematik_I/main?urlpath=lab/tree/
 
+
+  static_files:
+    - Videos
+
+
   jupyter:
     lite: true
 
