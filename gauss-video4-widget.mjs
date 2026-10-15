@@ -64,6 +64,11 @@ function render({ el }) {
   controls.style.background =
     "rgba(0, 0, 0, 0.72)";
 
+  controls.style.transition =
+    "opacity 0.3s ease";
+
+  controls.style.opacity = "1";
+
   // --------------------------------------------------
   // Hilfsfunktion für Buttons
   // --------------------------------------------------
@@ -110,6 +115,12 @@ function render({ el }) {
       "10 Sekunden vorspulen"
     );
 
+  const fullscreenButton =
+    createButton(
+      "⛶",
+      "Vollbild"
+    );
+
   // --------------------------------------------------
   // Zeitleiste
   // --------------------------------------------------
@@ -141,11 +152,16 @@ function render({ el }) {
   timeText.style.fontSize = "13px";
   timeText.style.whiteSpace = "nowrap";
 
+  // --------------------------------------------------
+  // Steuerung zusammensetzen
+  // --------------------------------------------------
+
   controls.appendChild(backButton);
   controls.appendChild(playButton);
   controls.appendChild(forwardButton);
   controls.appendChild(progress);
   controls.appendChild(timeText);
+  controls.appendChild(fullscreenButton);
 
   videoBox.appendChild(controls);
 
@@ -166,6 +182,89 @@ function render({ el }) {
   caption.style.marginTop = "6px";
 
   container.appendChild(caption);
+
+  // --------------------------------------------------
+  // Steuerungsleiste automatisch ein-/ausblenden
+  // --------------------------------------------------
+
+  let controlsTimer = null;
+
+  function keepControlsVisible() {
+
+    if (controlsTimer !== null) {
+
+      clearTimeout(controlsTimer);
+      controlsTimer = null;
+    }
+
+    controls.style.opacity = "1";
+    controls.style.pointerEvents = "auto";
+
+    videoBox.style.cursor = "default";
+  }
+
+  function showControls() {
+
+    keepControlsVisible();
+
+    if (!video.paused) {
+
+      controlsTimer = setTimeout(
+        () => {
+
+          controls.style.opacity = "0";
+          controls.style.pointerEvents = "none";
+
+          videoBox.style.cursor = "none";
+
+        },
+        2000
+      );
+    }
+  }
+
+  // Mausbewegung über dem Video
+
+  videoBox.addEventListener(
+    "mousemove",
+    showControls
+  );
+
+  // Maus betritt das Video
+
+  videoBox.addEventListener(
+    "mouseenter",
+    showControls
+  );
+
+  // Touchgeräte
+
+  videoBox.addEventListener(
+    "pointerdown",
+    showControls
+  );
+
+  // Maus verlässt das Video
+
+  videoBox.addEventListener(
+    "mouseleave",
+    () => {
+
+      if (!video.paused) {
+
+        if (controlsTimer !== null) {
+
+          clearTimeout(controlsTimer);
+          controlsTimer = null;
+        }
+
+        controls.style.opacity = "0";
+        controls.style.pointerEvents = "none";
+
+        videoBox.style.cursor = "none";
+      }
+    }
+  );
 
   // --------------------------------------------------
   // Zeit formatieren
@@ -236,6 +335,7 @@ function render({ el }) {
       video.currentTime = 0;
 
       updateTime();
+      keepControlsVisible();
     }
   );
 
@@ -250,8 +350,11 @@ function render({ el }) {
       if (video.paused) {
 
         try {
+
           await video.play();
+
         } catch (error) {
+
           console.error(
             "Video konnte nicht gestartet werden:",
             error
@@ -265,6 +368,10 @@ function render({ el }) {
     }
   );
 
+  // --------------------------------------------------
+  // Start
+  // --------------------------------------------------
+
   video.addEventListener(
     "play",
     () => {
@@ -274,8 +381,14 @@ function render({ el }) {
 
       playButton.title =
         "Video pausieren";
+
+      showControls();
     }
   );
+
+  // --------------------------------------------------
+  // Pause
+  // --------------------------------------------------
 
   video.addEventListener(
     "pause",
@@ -286,6 +399,8 @@ function render({ el }) {
 
       playButton.title =
         "Video starten";
+
+      keepControlsVisible();
     }
   );
 
@@ -302,6 +417,8 @@ function render({ el }) {
           0,
           video.currentTime - 10
         );
+
+      showControls();
     }
   );
 
@@ -322,6 +439,8 @@ function render({ el }) {
           video.duration,
           video.currentTime + 10
         );
+
+      showControls();
     }
   );
 
@@ -341,6 +460,8 @@ function render({ el }) {
         video.duration *
         Number(progress.value) /
         100;
+
+      showControls();
     }
   );
 
@@ -359,7 +480,99 @@ function render({ el }) {
 
       playButton.textContent =
         "▶ Start";
+
+      playButton.title =
+        "Video starten";
+
+      keepControlsVisible();
     }
+  );
+
+  // --------------------------------------------------
+  // Vollbild
+  // --------------------------------------------------
+
+  fullscreenButton.addEventListener(
+    "click",
+    async () => {
+
+      try {
+
+        if (!document.fullscreenElement) {
+
+          if (videoBox.requestFullscreen) {
+
+            await videoBox.requestFullscreen();
+
+          } else if (
+            videoBox.webkitRequestFullscreen
+          ) {
+
+            videoBox.webkitRequestFullscreen();
+
+          } else if (
+            video.webkitEnterFullscreen
+          ) {
+
+            video.webkitEnterFullscreen();
+          }
+
+        } else {
+
+          if (document.exitFullscreen) {
+
+            await document.exitFullscreen();
+
+          } else if (
+            document.webkitExitFullscreen
+          ) {
+
+            document.webkitExitFullscreen();
+          }
+        }
+
+      } catch (error) {
+
+        console.error(
+          "Vollbildmodus konnte nicht gestartet werden:",
+          error
+        );
+      }
+
+      showControls();
+    }
+  );
+
+  // --------------------------------------------------
+  // Vollbild-Button aktualisieren
+  // --------------------------------------------------
+
+  function updateFullscreenButton() {
+
+    if (
+      document.fullscreenElement === videoBox
+    ) {
+
+      fullscreenButton.title =
+        "Vollbild verlassen";
+
+    } else {
+
+      fullscreenButton.title =
+        "Vollbild";
+    }
+
+    showControls();
+  }
+
+  document.addEventListener(
+    "fullscreenchange",
+    updateFullscreenButton
+  );
+
+  document.addEventListener(
+    "webkitfullscreenchange",
+    updateFullscreenButton
   );
 
   // --------------------------------------------------
@@ -372,6 +585,8 @@ function render({ el }) {
 
       timeText.textContent =
         "Video konnte nicht geladen werden";
+
+      keepControlsVisible();
     }
   );
 

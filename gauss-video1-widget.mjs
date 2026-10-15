@@ -22,12 +22,6 @@ function render({ el }) {
 
   const video = document.createElement("video");
 
-  // Lokal:
-  // /Videos/...
-  //
-  // GitHub Pages:
-  // /Mathematik_I/Videos/...
-
   const basePath =
     window.location.hostname.endsWith("github.io")
       ? "/Mathematik_I"
@@ -38,15 +32,10 @@ function render({ el }) {
     "/Videos/Gauss_Verfahren_Folie_54.mp4";
 
   video.preload = "metadata";
-
-  // Ganz wichtig:
-  // Das Video darf NICHT automatisch starten.
   video.autoplay = false;
   video.loop = false;
   video.muted = false;
   video.playsInline = true;
-
-  // Wir verwenden unsere eigenen Bedienelemente.
   video.controls = false;
 
   video.style.width = "100%";
@@ -57,7 +46,7 @@ function render({ el }) {
   videoBox.appendChild(video);
 
   // --------------------------------------------------
-  // Steuerungsleiste IM Videobild
+  // Steuerungsleiste im Videobild
   // --------------------------------------------------
 
   const controls = document.createElement("div");
@@ -70,11 +59,15 @@ function render({ el }) {
   controls.style.display = "flex";
   controls.style.alignItems = "center";
   controls.style.gap = "8px";
-
   controls.style.padding = "8px 10px";
 
   controls.style.background =
     "rgba(0, 0, 0, 0.72)";
+
+  controls.style.transition =
+    "opacity 0.3s ease";
+
+  controls.style.opacity = "1";
 
   // --------------------------------------------------
   // Hilfsfunktion für Buttons
@@ -92,10 +85,8 @@ function render({ el }) {
     button.style.border = "none";
     button.style.background = "transparent";
     button.style.color = "white";
-
     button.style.fontSize = "15px";
     button.style.fontWeight = "600";
-
     button.style.padding = "6px 8px";
     button.style.cursor = "pointer";
 
@@ -103,7 +94,7 @@ function render({ el }) {
   }
 
   // --------------------------------------------------
-  // 10 Sekunden zurück
+  // Buttons
   // --------------------------------------------------
 
   const backButton =
@@ -112,24 +103,22 @@ function render({ el }) {
       "10 Sekunden zurück"
     );
 
-  // --------------------------------------------------
-  // Start / Pause
-  // --------------------------------------------------
-
   const playButton =
     createButton(
       "▶ Start",
       "Video starten"
     );
 
-  // --------------------------------------------------
-  // 10 Sekunden vor
-  // --------------------------------------------------
-
   const forwardButton =
     createButton(
       "10 s ↷",
       "10 Sekunden vorspulen"
+    );
+
+  const fullscreenButton =
+    createButton(
+      "⛶",
+      "Vollbild"
     );
 
   // --------------------------------------------------
@@ -172,6 +161,7 @@ function render({ el }) {
   controls.appendChild(forwardButton);
   controls.appendChild(progress);
   controls.appendChild(timeText);
+  controls.appendChild(fullscreenButton);
 
   videoBox.appendChild(controls);
 
@@ -192,6 +182,91 @@ function render({ el }) {
   caption.style.marginTop = "6px";
 
   container.appendChild(caption);
+
+  // --------------------------------------------------
+  // Steuerungsleiste automatisch ein-/ausblenden
+  // --------------------------------------------------
+
+  let controlsTimer = null;
+
+  function keepControlsVisible() {
+
+    if (controlsTimer !== null) {
+
+      clearTimeout(controlsTimer);
+      controlsTimer = null;
+    }
+
+    controls.style.opacity = "1";
+    controls.style.pointerEvents = "auto";
+
+    videoBox.style.cursor = "default";
+  }
+
+  function showControls() {
+
+    keepControlsVisible();
+
+    // Nur während das Video läuft automatisch ausblenden
+
+    if (!video.paused) {
+
+      controlsTimer = setTimeout(
+        () => {
+
+          controls.style.opacity = "0";
+          controls.style.pointerEvents = "none";
+
+          videoBox.style.cursor = "none";
+
+        },
+        2000
+      );
+    }
+  }
+
+  // Mausbewegung über dem Video
+
+  videoBox.addEventListener(
+    "mousemove",
+    showControls
+  );
+
+  // Wenn die Maus das Video betritt
+
+  videoBox.addEventListener(
+    "mouseenter",
+    showControls
+  );
+
+  // Für Touchgeräte
+
+  videoBox.addEventListener(
+    "pointerdown",
+    showControls
+  );
+
+  // Wenn die Maus das Video verlässt
+
+  videoBox.addEventListener(
+    "mouseleave",
+    () => {
+
+      if (!video.paused) {
+
+        if (controlsTimer !== null) {
+
+          clearTimeout(controlsTimer);
+          controlsTimer = null;
+        }
+
+        controls.style.opacity = "0";
+        controls.style.pointerEvents = "none";
+
+        videoBox.style.cursor = "none";
+      }
+    }
+  );
 
   // --------------------------------------------------
   // Zeit formatieren
@@ -247,8 +322,7 @@ function render({ el }) {
     "loadedmetadata",
     () => {
 
-      // Originales Seitenverhältnis verwenden.
-      // Dadurch wird das Video NICHT gequetscht.
+      // Originales Seitenverhältnis übernehmen
 
       if (
         video.videoWidth > 0 &&
@@ -261,13 +335,14 @@ function render({ el }) {
           video.videoHeight;
       }
 
-      // Sicherstellen:
-      // Das Video steht am Anfang und läuft nicht.
+      // Video soll am Anfang stehen
+      // und nicht automatisch starten
 
       video.pause();
       video.currentTime = 0;
 
       updateTime();
+      keepControlsVisible();
     }
   );
 
@@ -301,7 +376,7 @@ function render({ el }) {
   );
 
   // --------------------------------------------------
-  // Symbol automatisch ändern
+  // Start
   // --------------------------------------------------
 
   video.addEventListener(
@@ -313,9 +388,14 @@ function render({ el }) {
 
       playButton.title =
         "Video pausieren";
+
+      showControls();
     }
   );
 
+  // --------------------------------------------------
+  // Pause
+  // --------------------------------------------------
 
   video.addEventListener(
     "pause",
@@ -326,6 +406,8 @@ function render({ el }) {
 
       playButton.title =
         "Video starten";
+
+      keepControlsVisible();
     }
   );
 
@@ -342,6 +424,8 @@ function render({ el }) {
           0,
           video.currentTime - 10
         );
+
+      showControls();
     }
   );
 
@@ -362,6 +446,8 @@ function render({ el }) {
           video.duration,
           video.currentTime + 10
         );
+
+      showControls();
     }
   );
 
@@ -381,6 +467,8 @@ function render({ el }) {
         video.duration *
         Number(progress.value) /
         100;
+
+      showControls();
     }
   );
 
@@ -403,7 +491,105 @@ function render({ el }) {
 
       playButton.textContent =
         "▶ Start";
+
+      playButton.title =
+        "Video starten";
+
+      keepControlsVisible();
     }
+  );
+
+  // --------------------------------------------------
+  // Vollbild
+  // --------------------------------------------------
+
+  fullscreenButton.addEventListener(
+    "click",
+    async () => {
+
+      try {
+
+        // Noch nicht im Vollbildmodus
+
+        if (!document.fullscreenElement) {
+
+          if (videoBox.requestFullscreen) {
+
+            await videoBox.requestFullscreen();
+
+          } else if (
+            videoBox.webkitRequestFullscreen
+          ) {
+
+            videoBox.webkitRequestFullscreen();
+
+          } else if (
+            video.webkitEnterFullscreen
+          ) {
+
+            // Fallback für Safari / iOS
+
+            video.webkitEnterFullscreen();
+          }
+
+        } else {
+
+          // Vollbild verlassen
+
+          if (document.exitFullscreen) {
+
+            await document.exitFullscreen();
+
+          } else if (
+            document.webkitExitFullscreen
+          ) {
+
+            document.webkitExitFullscreen();
+          }
+        }
+
+      } catch (error) {
+
+        console.error(
+          "Vollbildmodus konnte nicht gestartet werden:",
+          error
+        );
+      }
+
+      showControls();
+    }
+  );
+
+  // --------------------------------------------------
+  // Vollbild-Button aktualisieren
+  // --------------------------------------------------
+
+  function updateFullscreenButton() {
+
+    if (
+      document.fullscreenElement === videoBox
+    ) {
+
+      fullscreenButton.title =
+        "Vollbild verlassen";
+
+    } else {
+
+      fullscreenButton.title =
+        "Vollbild";
+    }
+
+    showControls();
+  }
+
+  document.addEventListener(
+    "fullscreenchange",
+    updateFullscreenButton
+  );
+
+  document.addEventListener(
+    "webkitfullscreenchange",
+    updateFullscreenButton
   );
 
   // --------------------------------------------------
@@ -416,6 +602,8 @@ function render({ el }) {
 
       timeText.textContent =
         "Video konnte nicht geladen werden";
+
+      keepControlsVisible();
     }
   );
 
@@ -425,7 +613,7 @@ function render({ el }) {
 
   el.appendChild(container);
 
-  // Noch einmal ausdrücklich sicherstellen:
+  // Sicherstellen:
   // kein automatischer Start
 
   video.pause();
