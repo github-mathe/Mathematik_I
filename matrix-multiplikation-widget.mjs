@@ -30,7 +30,7 @@ function render({ el }) {
 
   video.src =
     basePath +
-    "/Videos/Matrix-Matrix_Multiplikation.mp4";
+    "/Videos/Matrix-Matrix_Produkt.mp4";
 
   video.preload = "metadata";
   video.autoplay = false;
