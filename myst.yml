@@ -106,11 +106,11 @@ project:
         - file: LineareAbhaengigkeit.ipynb
           title: Lineare Abhängigkeit von Vektoren
 
-        - file: Rang.ipynb
-          title: Rang einer Matrix
-
         - file: Spann.ipynb
           title: Spann eines Vektorraumes
+
+        - file: Rang.ipynb
+          title: Rang einer Matrix
 
         - file: Basis.ipynb
           title: Basis eines Vektorraumes             
