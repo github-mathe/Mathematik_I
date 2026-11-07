@@ -151,7 +151,7 @@ function render({ el }) {
 
   const caption = document.createElement("div");
 
-  caption.textContent = "Rang einer Matrix";
+  caption.textContent = "Vektorräume und Unterräume – Eindimensionaler Unterraum";
   caption.style.textAlign = "center";
   caption.style.fontStyle = "italic";
   caption.style.marginTop = "6px";
